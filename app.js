@@ -135,7 +135,7 @@ async function showList(listId, focusInput) {
         <div class="card-text">
           <div class="de">${esc(c.de)}</div>
           <div class="en">${esc(c.en)}</div>
-          <div class="meta">Fach ${c.box}</div>
+          <div class="meta">Schublade ${c.box}</div>
         </div>
         <div class="card-actions">
           <button class="small-btn" data-edit="${c.id}" aria-label="Bearbeiten">✏️</button>
