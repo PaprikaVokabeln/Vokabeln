@@ -83,7 +83,7 @@ async function showHome() {
         </div>
         <div class="due">
           <span class="badge ${due === 0 ? 'zero' : ''}">${due}</span>
-          <div class="meta">fällig</div>
+          <div class="meta">offen</div>
         </div>
       </button>`;
   }
