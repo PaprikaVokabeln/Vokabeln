@@ -75,11 +75,15 @@ async function showHome() {
   for (const list of lists) {
     const lc = cards.filter(c => c.listId === list.id);
     const due = lc.filter(c => c.due <= today).length;
+    // Schutz: Falls learn.js noch alt ist, einfach die Kartenanzahl zeigen
+    const info = typeof progressHtml === 'function'
+      ? progressHtml(lc)
+      : `<div class="meta">${lc.length} ${lc.length === 1 ? 'Karte' : 'Karten'}</div>`;
     html += `
       <button class="tile list-tile" data-list="${list.id}">
         <div>
           <div class="list-name">${esc(list.name)}</div>
-            ${progressHtml(lc)}
+          ${info}
         </div>
         <div class="due">
           <span class="badge ${due === 0 ? 'zero' : ''}">${due}</span>
@@ -99,6 +103,8 @@ async function showHome() {
     b.onclick = () => openList(Number(b.dataset.list));
   });
 }
+
+
 
 // ---------- Listenansicht ----------
 async function showList(listId, focusInput) {
