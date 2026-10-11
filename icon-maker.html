@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Icon-Maker</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 20px; text-align: center; background: #f4f6fb; }
+    canvas { width: 140px; height: 140px; border-radius: 24px; margin: 10px; }
+    a { display: block; margin: 12px auto; padding: 16px; max-width: 320px;
+        background: #2563eb; color: #fff; border-radius: 14px;
+        text-decoration: none; font-weight: 600; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h1>App-Symbol erstellen</h1>
+  <canvas id="c192" width="192" height="192"></canvas>
+  <canvas id="c512" width="512" height="512"></canvas>
+  <a id="d192" download="icon-192.png">⬇️ icon-192.png herunterladen</a>
+  <a id="d512" download="icon-512.png">⬇️ icon-512.png herunterladen</a>
+
+  <script>
+    function draw(size) {
+      const c = document.getElementById('c' + size);
+      const x = c.getContext('2d');
+      const s = size / 512;
+      x.fillStyle = '#2563eb';
+      x.fillRect(0, 0, size, size);
+      x.fillStyle = '#ffffff';
+      x.beginPath();
+      x.roundRect(136 * s, 150 * s, 240 * s, 212 * s, 24 * s);
+      x.fill();
+      x.fillStyle = '#e5e7eb';
+      x.fillRect(166 * s, 253 * s, 180 * s, 6 * s);
+      x.font = `bold ${80 * s}px system-ui, sans-serif`;
+      x.textAlign = 'center';
+      x.textBaseline = 'middle';
+      x.fillStyle = '#2563eb';
+      x.fillText('DE', 256 * s, 207 * s);
+      x.fillStyle = '#16a34a';
+      x.fillText('EN', 256 * s, 308 * s);
+      document.getElementById('d' + size).href = c.toDataURL('image/png');
+    }
+    draw(192);
+    draw(512);
+  </script>
+</body>
+</html>
