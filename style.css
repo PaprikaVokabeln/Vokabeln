@@ -170,3 +170,14 @@ header h1 { margin: 0; font-size: 20px; }
 .progress-bar { height: 100%; background: #2563eb; transition: width .3s; }
 .center { text-align: center; margin-top: 6px; }
 .btn.success { background: #16a34a; color: #fff; }
+
+/* ---------- 5 Schubladen ---------- */
+.drawers { display: flex; flex-direction: column; gap: 6px; margin: 12px 0; }
+.drawer {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #fff; border: 2px solid #e5e7eb; border-radius: 12px;
+  padding: 10px 14px; font-weight: 600;
+}
+.drawer b { font-size: 20px; color: #2563eb; }
+.drawer.done { border-color: #16a34a; background: #f0fdf4; }
+.drawer.done b { color: #16a34a; }
