@@ -114,8 +114,9 @@ async function showList(listId, focusInput) {
       <div class="big-number">${due}</div>
       <div class="meta">von ${cards.length} Karten heute fällig</div>
     </div>
-    <button class="btn primary" id="btn-learn">▶️ Lernen (${due} fällig)</button>
-    <button class="btn secondary" id="btn-practice">🔁 Alle Karten üben</button>
+        <button class="btn primary" id="btn-learn">▶️ Lernen (${due} noch offen)</button>
+    <button class="btn secondary" id="btn-practice">🔁 Alle Karten wiederholen</button>
+
 
     <div class="tile">
       <h2>Neue Karte</h2>
