@@ -114,6 +114,8 @@ async function showList(listId, focusInput) {
       <div class="big-number">${due}</div>
       <div class="meta">von ${cards.length} Karten heute fällig</div>
     </div>
+    <button class="btn primary" id="btn-learn">▶️ Lernen (${due} fällig)</button>
+    <button class="btn secondary" id="btn-practice">🔁 Alle Karten üben</button>
 
     <div class="tile">
       <h2>Neue Karte</h2>
@@ -155,6 +157,8 @@ async function showList(listId, focusInput) {
     showList(listId, true);
   };
   if (focusInput) document.getElementById('in-de').focus();
+  document.getElementById('btn-learn').onclick = () => startLearn(listId, false);
+  document.getElementById('btn-practice').onclick = () => startLearn(listId, true);
 
   // Karte bearbeiten
   app.querySelectorAll('[data-edit]').forEach(b => b.onclick = async () => {
