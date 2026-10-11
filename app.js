@@ -17,7 +17,9 @@ function setHeader(title, showBack) {
 
 // Zurück-Pfeil oben und Zurück-Taste vom Handy
 backBtn.addEventListener('click', () => history.back());
-window.addEventListener('popstate', () => showHome());
+window.addEventListener('popstate', e =>
+  e.state && e.state.listId ? showList(e.state.listId) : showHome());
+
 
 function openList(id) {
   history.pushState({ listId: id }, '');
