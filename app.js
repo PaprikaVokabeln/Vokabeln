@@ -63,7 +63,7 @@ async function showHome() {
   let html = `
     <div class="tile summary">
       <div class="big-number">${dueTotal}</div>
-      <div class="meta">Karten heute fällig</div>
+      <div class="meta">Karten noch offen</div>
     </div>
     <button class="btn primary" id="btn-new-list">+ Neue Liste</button>
     <h2>Meine Listen</h2>`;
@@ -112,7 +112,7 @@ async function showList(listId, focusInput) {
   app.innerHTML = `
     <div class="tile summary">
       <div class="big-number">${due}</div>
-      <div class="meta">von ${cards.length} Karten heute fällig</div>
+      <div class="meta">von ${cards.length} Karten noch offen</div>
     </div>
         <button class="btn primary" id="btn-learn">▶️ Lernen (${due} noch offen)</button>
     <button class="btn secondary" id="btn-practice">🔁 Alle Karten wiederholen</button>
