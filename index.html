@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Vokabeltrainer</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="btn-back" class="icon-btn" hidden aria-label="Zurück">←</button>
+    <h1 id="title">Vokabeltrainer</h1>
+  </header>
+
+  <main id="app"></main>
+
+  <!-- Eingabefenster (z. B. für "Neue Liste" oder "Karte bearbeiten") -->
+  <dialog id="dlg">
+    <form method="dialog" id="dlg-form">
+      <h2 id="dlg-title"></h2>
+      <div id="dlg-fields"></div>
+      <div class="row">
+        <button type="button" id="dlg-cancel" class="btn secondary">Abbrechen</button>
+        <button type="submit" value="ok" class="btn primary">Speichern</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
