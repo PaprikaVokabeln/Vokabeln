@@ -81,7 +81,7 @@ const DB = (() => {
     addCard: (listId, de, en) => run('cards', 'readwrite', tx =>
       tx.objectStore('cards').add({
         listId, de, en,
-        box: 1,
+        box: 3,
         due: today(),
         created: Date.now()
       })),
@@ -90,7 +90,7 @@ const DB = (() => {
       const now = Date.now();
       pairs.forEach((p, i) => s.add({
         listId, de: p.de, en: p.en,
-        box: 1, due: today(), created: now + i
+        box: 3, due: today(), created: now + i
       }));
     }),
     updateCard: (id, changes) => update('cards', id, changes),
