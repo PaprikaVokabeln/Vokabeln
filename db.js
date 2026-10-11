@@ -75,4 +75,25 @@ const DB = (() => {
 
     // ----- Karten -----
     getCards: (listId) => run('cards', 'readonly', tx =>
-      
+      tx.objectStore('cards').index('listId').getAll(listId)),
+    getAllCards: () => run('cards', 'readonly', tx => tx.objectStore('cards').getAll()),
+    getCard: (id) => run('cards', 'readonly', tx => tx.objectStore('cards').get(id)),
+    addCard: (listId, de, en) => run('cards', 'readwrite', tx =>
+      tx.objectStore('cards').add({
+        listId, de, en,
+        box: 1,
+        due: today(),
+        created: Date.now()
+      })),
+    addCards: (listId, pairs) => run('cards', 'readwrite', tx => {
+      const s = tx.objectStore('cards');
+      const now = Date.now();
+      pairs.forEach((p, i) => s.add({
+        listId, de: p.de, en: p.en,
+        box: 1, due: today(), created: now + i
+      }));
+    }),
+    updateCard: (id, changes) => update('cards', id, changes),
+    deleteCard: (id) => run('cards', 'readwrite', tx => tx.objectStore('cards').delete(id))
+  };
+})();
