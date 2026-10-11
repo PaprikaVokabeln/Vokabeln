@@ -1,5 +1,6 @@
 // sw.js – sorgt dafür, dass die App offline funktioniert
-const CACHE = 'vokabeln-v2';
+const CACHE = 'vokabeln-v4';
+
 const FILES = [
   './', './index.html', './style.css', './db.js', './learn.js', './app.js',
   './manifest.json', './icon-192.png', './icon-512.png'
