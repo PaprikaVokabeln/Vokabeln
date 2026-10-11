@@ -1,0 +1,89 @@
+:root {
+  --blue: #2563eb;
+  --red: #dc2626;
+  --green: #16a34a;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.4;
+  padding-bottom: 40px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Kopfzeile */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 8px;
+  background: var(--blue); color: #fff;
+  padding: 10px 16px; min-height: 60px;
+}
+.topbar h1 {
+  font-size: 21px; margin: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.icon-btn {
+  background: none; border: none; color: #fff;
+  font-size: 28px; width: 48px; height: 48px;
+  border-radius: 50%; cursor: pointer;
+}
+
+main { padding: 16px; max-width: 640px; margin: 0 auto; }
+
+/* Große Buttons */
+.btn {
+  display: block; width: 100%; min-height: 56px;
+  padding: 12px 16px; margin: 8px 0;
+  font-size: 18px; font-weight: 600; font-family: inherit;
+  border: none; border-radius: var(--radius); cursor: pointer;
+}
+.btn.primary   { background: var(--blue); color: #fff; }
+.btn.secondary { background: #e5e7eb; color: var(--text); }
+.btn.danger    { background: #fee2e2; color: var(--red); }
+.btn:active    { transform: scale(0.98); }
+
+.row { display: flex; gap: 10px; }
+.row .btn { flex: 1; }
+
+/* Kacheln */
+.tile {
+  background: var(--card); border-radius: var(--radius);
+  padding: 16px; margin: 10px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.list-tile {
+  display: flex; justify-content: space-between; align-items: center;
+  width: 100%; text-align: left; border: none;
+  font: inherit; color: inherit; cursor: pointer;
+}
+.list-name { font-weight: 700; font-size: 19px; }
+.meta { color: var(--muted); font-size: 15px; }
+
+.badge {
+  background: var(--blue); color: #fff;
+  border-radius: 999px; padding: 6px 14px;
+  font-weight: 700; font-size: 17px;
+  min-width: 44px; text-align: center;
+}
+.badge.zero { background: #e5e7eb; color: var(--muted); }
+
+/* Eingabefelder */
+label { display: block; font-weight: 600; margin: 10px 0 4px; }
+input {
+  width: 100%; font-size: 18px; font-family: inherit;
+  padding: 14px; margin-top: 4px;
+  border: 2px solid #d1d5db; border-radius: 12px;
+  background: #fff;
+}
+input:focus { outline: none; border-color: var(--bl
