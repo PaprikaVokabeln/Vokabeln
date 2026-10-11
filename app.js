@@ -79,7 +79,7 @@ async function showHome() {
       <button class="tile list-tile" data-list="${list.id}">
         <div>
           <div class="list-name">${esc(list.name)}</div>
-            ${progressHtml(lc)
+            ${progressHtml(lc)}
         </div>
         <div class="due">
           <span class="badge ${due === 0 ? 'zero' : ''}">${due}</span>
