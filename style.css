@@ -143,3 +143,30 @@ header h1 { margin: 0; font-size: 20px; }
   padding: 0 8px 0 0;
 }
 .back[hidden] { display: none; }
+/* ---------- Lernmodus (Phase 2) ---------- */
+.flashcard {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+  min-height: 260px;
+  padding: 24px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+.flashcard .lang { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; }
+.flashcard .word { font-size: 30px; font-weight: 700; margin: 8px 0 16px; word-break: break-word; }
+.flashcard .answer { border-top: 2px dashed #e5e7eb; padding-top: 16px; width: 100%; }
+.flashcard .answer .word { color: #16a34a; }
+.flashcard .hint { color: #2563eb; font-weight: 600; }
+.answer[hidden], .hint[hidden], #rate[hidden] { display: none; }
+
+.progress { height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden; margin-top: 8px; }
+.progress-bar { height: 100%; background: #2563eb; transition: width .3s; }
+.center { text-align: center; margin-top: 6px; }
+.btn.success { background: #16a34a; color: #fff; }
